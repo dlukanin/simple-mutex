@@ -45,7 +45,7 @@ export class Mutex {
      */
     protected options: IMutexOptions;
 
-    constructor(options?: IMutexOptions) {
+    constructor(options: IMutexOptions = {}) {
         const SelectedPromise = options.Promise || Promise;
 
         if (!SelectedPromise) {

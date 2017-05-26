@@ -1,6 +1,3 @@
-// Karma configuration
-// Generated on Thu Apr 13 2017 12:06:59 GMT+0300 (RTZ 2 (зима))
-
 module.exports = function (config) {
     config.set({
 
@@ -56,7 +53,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Firefox', 'Chrome'],
+        browsers: ['Firefox'],
 
 
         // Continuous Integration mode
@@ -67,4 +64,4 @@ module.exports = function (config) {
         // how many browser should be started simultaneous
         concurrency: Infinity
     })
-}
+};
