@@ -9,6 +9,10 @@ if (typeof global !== 'undefined') {
     clearTimeout = window.clearTimeout;
 }
 
+export interface IMutex {
+    capture(key: string): Promise<() => void>;
+}
+
 export interface IMutexOptions {
     /**
      * Inteval of polling captured mutex
@@ -24,7 +28,7 @@ export interface IMutexOptions {
     Promise?: PromiseConstructor;
 }
 
-export class Mutex {
+export class Mutex implements IMutex {
     /**
      * Default mutex options.
      * @type {IMutexOptions}
