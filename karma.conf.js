@@ -4,14 +4,14 @@ module.exports = function (config) {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
 
-
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['mocha', 'requirejs'],
+        frameworks: ['mocha', 'requirejs', 'chai'],
 
 
         // list of files / patterns to load in the browser
         files: [
+            {pattern: './node_modules/bluebird/js/browser/bluebird.js', included: false},
             {pattern: './node_modules/bluebird/js/browser/bluebird.js', included: false},
             {pattern: 'build/lib/*.js', included: false},
             {pattern: 'build/test/*.js', included: false},

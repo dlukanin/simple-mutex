@@ -1,6 +1,8 @@
 import {Mutex, IMutexOptions} from '../lib/mutex';
 import * as bluebird from 'bluebird';
-import {expect} from 'chai';
+import * as chai from 'chai';
+
+const expect = chai.expect;
 
 describe('mutex', function(): void {
     let currentCase = 0;
