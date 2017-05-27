@@ -2,7 +2,7 @@
   "name": "ts-simple-mutex",
   "version": "0.0.1",
   "description": "Simple mutex js (ts) implementation for node and browsers (es5+)",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "mocha build/test/*",
     "build": "tsc",

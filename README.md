@@ -10,6 +10,9 @@ npm install ts-simple-mutex --save
 
 ## Changelog
 
+#### v 0.0.2
+Some inner module fixes.
+
 #### v 0.0.1
 Hello, world! First version of package.
 
