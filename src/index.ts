@@ -1,1 +1,1 @@
-export {Mutex} from './lib/mutex';
+export {Mutex, IMutexOptions} from './lib/mutex';

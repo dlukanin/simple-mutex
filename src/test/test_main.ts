@@ -1,19 +1,33 @@
-import {Mutex} from '../lib/mutex';
+import {Mutex, IMutexOptions} from '../lib/mutex';
 import * as bluebird from 'bluebird';
-type TDone = (arg?: any) => void;
+import {expect} from 'chai';
 
 describe('mutex', function(): void {
     let currentCase = 0;
     const oldPromise = Promise;
 
-    beforeEach(function(done: TDone): void {
+    beforeEach(function(done: MochaDone): void {
         // TODO
         currentCase++;
         Promise = oldPromise;
         done();
     });
 
-    it('should lock', function(done: TDone): void {
+    it('should process passed mutex options', function(done: MochaDone): void {
+        const options: IMutexOptions = {
+            autoUnlockTimeoutMs: 1200,
+            intervalMs: 100,
+            Promise: bluebird
+        };
+
+        const mutex = new Mutex(options);
+
+        expect((mutex as any).options).not.to.eq(options);
+        expect((mutex as any).options).to.eql(options);
+        done();
+    });
+
+    it('should lock', function(done: MochaDone): void {
         const mutex = new Mutex();
         const testCase: number = currentCase;
 
@@ -46,7 +60,7 @@ describe('mutex', function(): void {
         secondFunction();
     });
 
-    it('should unlock', function(done: TDone): void {
+    it('should unlock', function(done: MochaDone): void {
         const mutex = new Mutex();
         mutex.capture('key').then((unlock) => {
             setTimeout(() => {
@@ -64,7 +78,7 @@ describe('mutex', function(): void {
             });
     });
 
-    it('should process keys for capturing', function(done: TDone): void {
+    it('should process different keys for capturing', function(done: MochaDone): void {
         const mutex = new Mutex();
 
         mutex.capture('firstKey');
@@ -74,7 +88,7 @@ describe('mutex', function(): void {
             });
     });
 
-    it('should have default timeout of 3000ms', function(done: TDone): void {
+    it('should have default timeout of 3000ms', function(done: MochaDone): void {
         const mutex = new Mutex();
         this.timeout(4000);
         mutex.capture('anotherKey');
@@ -86,7 +100,22 @@ describe('mutex', function(): void {
         }, 3000);
     });
 
-    it('should use custom Promise', function(done: TDone): void {
+    it('should throw error in no-Promise env', function(done: MochaDone): void {
+        Promise = null;
+
+        try {
+            const mutex = new Mutex();
+            done('Mutex should not be constructed');
+        } catch (error) {
+            expect(error).to.be.instanceOf(Error);
+            expect(error.message).to.eq(
+                'Could not get Promise object in current env. You should pass custom Promise lib to constructor options'
+            );
+            done();
+        }
+    });
+
+    it('should use custom Promise', function(done: MochaDone): void {
         Promise = null;
 
         const mutex = new Mutex({

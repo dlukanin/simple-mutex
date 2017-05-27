@@ -54,7 +54,7 @@ export class Mutex implements IMutex {
 
         if (!SelectedPromise) {
             throw new Error(
-                'Could not get native Promise in current env. Please pass custom Promise lib to constructor options'
+                'Could not get Promise object in current env. You should pass custom Promise lib to constructor options'
             );
         }
 
@@ -78,8 +78,8 @@ export class Mutex implements IMutex {
     }
 
     /**
-     * Checks inner storage for key. If key not exists - sets new key.
-     * If key is exists - waits for key deletion.
+     * Checks inner storage for key. Sets new key if key does not exist.
+     * If key exists - waits for key deletion.
      * Resolves with function - key deleter.
      *
      * @param key
