@@ -88,7 +88,8 @@ export class Mutex implements IMutex {
      */
     protected checkMutexAndLock(key: string, resolve: (arg: any) => void, reject: (arg: any) => void): void {
         if (!this.storage[key]) {
-            this.storage[key] = true;
+            const value = Date.now();
+            this.storage[key] = value;
 
             const timeout = setTimeout(() => {
                 delete this.storage[key];
@@ -96,7 +97,9 @@ export class Mutex implements IMutex {
 
             resolve(() => {
                 clearTimeout(timeout);
-                delete this.storage[key];
+                if (this.storage[key] === value) {
+                    delete this.storage[key];
+                }
             });
         } else {
             setTimeout(this.checkMutexAndLock.bind(this, key, resolve, reject), this.options.intervalMs);

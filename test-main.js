@@ -16,6 +16,7 @@ require.config({
     // Karma serves files under /base, which is the basePath from your config file
     baseUrl: '/base',
     paths: {
+        'q': './node_modules/q/q',
         'bluebird': './node_modules/bluebird/js/browser/bluebird',
         'chai': './node_modules/chai/chai',
     },

@@ -12,7 +12,7 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             {pattern: './node_modules/bluebird/js/browser/bluebird.js', included: false},
-            {pattern: './node_modules/bluebird/js/browser/bluebird.js', included: false},
+            {pattern: './node_modules/q/q.js', included: false},
             {pattern: 'build/lib/*.js', included: false},
             {pattern: 'build/test/*.js', included: false},
             {pattern: './main-test.js', included: false},
