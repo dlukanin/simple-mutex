@@ -72,5 +72,5 @@ Creates new Mutex instance. You can pass options object to constructor:
  
  ```
 
-#### capture(key: string): Promise/<() => void/>
+#### capture(key: string): Promise<() => void>
 Tries to capture mutex by provided key. Returns Promise, resolving with unlocker function.

@@ -3,3 +3,7 @@ tsconfig.json
 .gitignore
 .idea
 build/test
+.travis.yml
+karma.conf.js
+test-main.js
+tslint.json
