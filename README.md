@@ -74,3 +74,7 @@ Creates new Mutex instance. You can pass options object to constructor:
 
 #### capture(key: string): Promise<() => void>
 Tries to capture mutex by provided key. Returns Promise, resolving with unlocker function.
+
+## License (MIT)
+
+https://github.com/dlukanin/ts-simple-mutex/blob/master/LICENSE
