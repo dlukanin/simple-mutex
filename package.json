@@ -1,7 +1,7 @@
 {
-  "name": "yet-another-mutex",
+  "name": "ts-simple-mutex",
   "version": "0.0.1",
-  "description": "Yet another simple mutex. With typescript definitions.",
+  "description": "Simple mutex js (ts) implementation for node and browsers (es5+)",
   "main": "index.js",
   "scripts": {
     "test": "mocha build/test/*",
@@ -16,6 +16,10 @@
     "lock",
     "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlukanin/ts-simple-mutex.git"
+  },
   "author": "dylukanin@gmail.com",
   "license": "MIT",
   "devDependencies": {
@@ -23,7 +27,6 @@
     "@types/chai": "^3.5.0",
     "@types/mocha": "^2.2.40",
     "@types/node": "^7.0.12",
-    "@types/object-assign": "^4.0.30",
     "bluebird": "^3.5.0",
     "chai": "^3.5.0",
     "karma": "^1.6.0",
