@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Simple mutex js (ts) implementation for node and browsers (es5+)",
   "main": "build/index.js",
+  "typings": "build/index",
   "scripts": {
     "test": "mocha build/test/*",
     "build": "tsc",
