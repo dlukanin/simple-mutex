@@ -10,6 +10,9 @@ npm install ts-simple-mutex --save
 
 ## Changelog
 
+#### v 0.0.4
+Some fixes in module dev dependencies.
+
 #### v 0.0.3
 Some fixes in ts definitions.
 
