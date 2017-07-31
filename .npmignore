@@ -7,3 +7,4 @@ build/test
 karma.conf.js
 test-main.js
 tslint.json
+npm-shrinkwrap.json
