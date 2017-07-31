@@ -1,6 +1,6 @@
 {
   "name": "ts-simple-mutex",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple mutex js (ts) implementation for node and browsers (es5+)",
   "main": "build/index.js",
   "typings": "build/index",
