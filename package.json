@@ -8,7 +8,7 @@
     "test": "mocha build/test/*.js",
     "build": "tsc",
     "watch": "tsc --watch",
-    "lint": "tslint './src/**/*.ts' --project tsconfig.json",
+    "lint": "tslint './src/lib/*.ts' --project tsconfig.json",
     "karma": "karma start",
     "karma-travis": "karma start --browsers Firefox --single-run"
   },
