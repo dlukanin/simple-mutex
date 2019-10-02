@@ -1,9 +1,9 @@
 language: node_js
 sudo: true
 node_js:
-- '7'
-- '6'
-- '5'
+- '8'
+- '10'
+- '12'
 services:
   - xvfb
 before_script:

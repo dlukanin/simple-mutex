@@ -9,7 +9,7 @@
         "rootDir": "./src",
         "declarationDir": "./build",
         "outDir": "./build",
-        "sourceMap": false,
+        "sourceMap": true,
         "lib": ["es5", "es2015.promise", "DOM"]
     }
 }
